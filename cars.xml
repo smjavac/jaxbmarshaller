@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Cars>
+    <name>Kia</name>
+    <year>2019</year>
+    <body>sedan</body>
+    <engine>1.6</engine>
+    <transmission>manual</transmission>
+</Cars>
