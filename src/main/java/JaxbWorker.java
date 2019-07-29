@@ -32,7 +32,7 @@ public class JaxbWorker {
         carsAdd(carsList, car6, car7, car8, car9, car10);
 
         // сохраняем объект в XML файл
-        convertObjectToXml(carsList, fileName);
+        convertObjectToXml(car1, fileName);
     }
 
     private static void carsAdd(List<Cars> carsList, Cars car1, Cars car2, Cars car3, Cars car4, Cars car5) {
@@ -43,20 +43,17 @@ public class JaxbWorker {
         carsList.add(car5);
     }
 
-        // сохраняем объект в XML файл
-        @XmlElementWrapper
-    private static void convertObjectToXml( List<Cars> cars, String filePath){
+    // сохраняем объект в XML файл
+    @XmlElementWrapper
+    private static void convertObjectToXml(Cars car, String filePath) {
         try {
             JAXBContext context = JAXBContext.newInstance(Cars.class);
             Marshaller marshaller = context.createMarshaller();
             // устанавливаем флаг для читабельного вывода XML в JAXB
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
             // маршаллинг объекта в файл
-            for (Cars car: cars) {
-                marshaller.marshal(car, new File(filePath));
-            }
-
-        }catch (JAXBException e) {
+            marshaller.marshal(car, new File(filePath));
+        } catch (JAXBException e) {
             e.getMessage();
         }
     }
