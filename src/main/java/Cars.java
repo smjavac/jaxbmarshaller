@@ -1,18 +1,16 @@
 
 import javax.xml.bind.annotation.*;
 // определяем корневой элемент
-@XmlRootElement(name = "Cars")
+//@XmlRootElement(name = "Cars")
 
 // определяем последовательность тегов в XML
 @XmlType(propOrder = {"name", "year", "body", "engine", "transmission"})
-
 public class Cars {
     private String name;
     private String year;
     private String body;
     private String engine;
     private String transmission;
-
     public Cars() {
     }
 

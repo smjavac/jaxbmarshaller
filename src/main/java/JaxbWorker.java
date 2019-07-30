@@ -28,11 +28,14 @@ public class JaxbWorker {
         Cars car8 = new Cars("Toyota", "2019", "sedan", "V6", "automatic");
         Cars car9 = new Cars("Land Rover", "2011", "crossover", "V6", "automatic");
         Cars car10 = new Cars("Kia", "2019", "sedan", "1.6", "manual");
-        carsAdd(carsList, car1, car2, car3, car4, car5);
-        carsAdd(carsList, car6, car7, car8, car9, car10);
+
+        CarsList carsList1 = new CarsList();
+
+        carsAdd(carsList1.getCarsList(), car1, car2, car3, car4, car5);
+        carsAdd(carsList1.getCarsList(), car6, car7, car8, car9, car10);
 
         // сохраняем объект в XML файл
-        convertObjectToXml(car1, fileName);
+        convertObjectToXml(carsList1, fileName);
     }
 
     private static void carsAdd(List<Cars> carsList, Cars car1, Cars car2, Cars car3, Cars car4, Cars car5) {
@@ -44,10 +47,10 @@ public class JaxbWorker {
     }
 
     // сохраняем объект в XML файл
-    @XmlElementWrapper
-    private static void convertObjectToXml(Cars car, String filePath) {
+
+    private static void convertObjectToXml(CarsList car, String filePath) {
         try {
-            JAXBContext context = JAXBContext.newInstance(Cars.class);
+            JAXBContext context = JAXBContext.newInstance(CarsList.class);
             Marshaller marshaller = context.createMarshaller();
             // устанавливаем флаг для читабельного вывода XML в JAXB
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
