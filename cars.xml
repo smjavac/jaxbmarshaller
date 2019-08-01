@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Cars>
-    <name>BMW</name>
-    <year>2015</year>
-    <body>sedan</body>
-    <engine>V6</engine>
-    <transmission>automatic</transmission>
-</Cars>
